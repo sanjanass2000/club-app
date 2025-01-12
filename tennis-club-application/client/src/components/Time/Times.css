@@ -1,0 +1,24 @@
+/* Times.css */
+.time__button {
+    background-color: #ffffff; /* Blue background color */
+    color: #000000; /* White text color */
+    padding: 8px 16px; /* Padding around the text */
+    margin: 4px; /* Margin between buttons */
+    border: none; /* Remove the default button border */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    border-radius: 4px;
+    height: 50px;
+    width: 200px;
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid rgb(118, 163, 219);
+    font-weight: 600;
+    transition: all .3s ease;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    
+
+  }
+  
+  button:hover {
+    background-color: #bbd1e4; /* Darker blue color on hover */
+    /* transition: all .s ease; */
+  }

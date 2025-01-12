@@ -1,0 +1,863 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* background-image: linear-gradient(15deg,#0f0c0c ,#100a0a,#0c0a0a); */
+  background-color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+  list-style:none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.firstp {
+  margin-top: -50px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.secondp {
+  margin-top: 20px;
+  font-size: 17px;
+}
+
+.thirdp {
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.header {
+  margin-top: -80px;
+  background-color: rgba(255, 255, 255,.92);
+  border-bottom: 2px solid rgb(23, 106, 138);
+  position: fixed;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  z-index: 2;
+}
+
+.header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px 0;
+  min-height: 80px;
+  color: rgb(0, 0, 0);
+}
+
+.header__content .logo {
+  margin-right: 640px; /* Adjust this margin to your preference */
+}
+
+.logo {
+  font-size: 25px;
+  letter-spacing: -1.5px;
+  font-weight: 600;
+}
+
+.nav {
+  display: inline-block;
+}
+
+.nav__list {
+  display: flex;
+  column-gap: 40px;
+  margin-top: 15px;
+}
+
+
+.nav__link {
+  color: rgb(0, 0, 0,0.65);
+  font-weight: 600;
+  transition: all 0.2s;
+  font-size: 16px;
+}
+
+/* .nav__link::before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  margin: auto;
+  width: 0%;
+  content: '';
+  color: transparent;
+  background: linear-gradient(45deg, black, #365e9b);
+  height: 1px;
+  transition: all .3s;
+} */
+
+
+.nav__link:hover{
+  width: 100%;
+  color: rgb(0,0,0,1); 
+  border-bottom: 2px solid black; 
+  padding-bottom: 3px;
+}
+
+.main__home {
+  margin-top: 80px;
+  text-align: center;
+  padding: 10%;
+  background-image:
+   linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,.1)),
+   url("../public/BC_Complete_layout.jpg");
+  background-size: contain;
+  background-repeat: no-repeat
+}
+
+.main__lessons{
+  margin-top: 80px;
+  text-align: center;
+  padding: 10%;
+  /* background: #728BA6; */
+  background: linear-gradient(to bottom, #728BA6,white);
+  /* background-image:
+   linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,.1)),
+   url("../public/BC_Complete_layout4.jpg"); */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.main__kids{
+  margin-top: 80px;
+  text-align: center;
+  padding: 10%;
+  background-image:
+   linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,.1)),
+   url("../public/lesson_card_image.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+}
+
+.main__clinics{
+  margin-top: 80px;
+  text-align: center;
+  padding: 10%;
+  background-image: 
+    linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,.1)), 
+    url("../public/BC_Complete_layout5.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.main__rentals{
+  margin-top: 80px;
+  text-align: center;
+  padding: 10%;
+  background-image:
+   linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,.1)),
+   url("../public/BC_Complete_layout5.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.main__packages{
+  margin-top: 80px;
+  text-align: center;
+  padding: 10%;
+  background-image:
+   linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,.1)),
+   url("../public/BC_Complete_layout3.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+.main__stringing{
+  margin-top: 80px;
+  text-align: center;
+  padding: 10%;
+  background-image:
+   linear-gradient(rgba(255,255,255,.05),rgba(255,255,255,.1)),
+   url("../public/Tennis_Racket.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.main__contact{
+  margin-top: 80px;
+  text-align: center;
+  padding: 10%;
+  /* background-image:
+   linear-gradient(rgba(255,255,255,.05),rgba(255,255,255,.1)),
+   url("../public/Tennis_Racket.jpg");  */
+  /* background-color: #f3f6fc; */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.main__lessons__booking {
+  margin-top: 80px;
+  text-align: center;
+  padding: 5%;
+  /*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=3b4329&c2=728ba6&gt=r&gd=dcc
+*/
+  /* background-image:
+   linear-gradient(rgba(255,255,255,.05),rgba(255,255,255,.1)),
+   url("../public/Tennis_Racket.jpg");  */
+  /* background-color: #f3f6fc; */
+  /* background-size: contain;
+  background-repeat: no-repeat; */
+  /* text-align: center;
+  margin: 0 auto;
+  width: 50%;
+  font-family: 'Montserrat', sans-serif;
+  padding: 50px;
+  color: rgb(30, 45, 65); */
+  background: linear-gradient(to bottom,#728BA6, white);
+  color:white;
+
+}
+
+
+.main__announcements{
+  margin-top: 80px;
+  text-align: center;
+  padding: 10%;
+  /* background-image:
+   linear-gradient(rgba(255,255,255,.05),rgba(255,255,255,.1)),
+   url("../public/Tennis_Racket.jpg"); */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+.heading {
+  /* color: rgb(73, 80, 81); */
+  color: white;
+  font-size: 45px;
+  margin-top: -50px;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+
+.text {
+  line-height: 1.6;
+  font-size: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.title{
+  font-size: 35px;
+  margin-top: 80px;
+  margin-bottom: 20px;
+  text-decoration: underline 4px solid #1b3e5e;
+  color: #1b3e5e;
+}
+
+.questions-container{
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.question{
+  border-bottom: 1px solid #000000;
+}
+.question button{
+  border-radius: 4px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 15px;
+  border:none;
+  outline: none;
+  font-size: 22px;
+  color: #000000;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+}
+.question p{
+  font-size: 22px;
+  max-height: 0;
+  opacity: 0;
+  line-height: 1.5;
+  overflow: hidden;
+  transition: all 0.6s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+.fa-chevron-down{
+  transition: transform 0.5s ease-in ;
+  color: #000000;
+}
+
+/*add this class when click*/
+.question p.show{
+  max-height: 200px; 
+  opacity: 1;
+  padding:0px 15px 30px 15px;
+}
+.question button .d-arrow.rotate{
+  transform: rotate(180deg);
+}
+
+.button {
+  height: 200px;
+  width: 400px;
+  border-radius: 20px;
+  font-size: 25px;
+  color: blacl;
+  background-color: rgba(255, 255, 255, 1);
+  /* background-color: linear-gradient(rgba(14, 40, 63),black); */
+  /* background-image: linear-gradient(to left, #e4e7ff 10%,black 100%, black 100%); */
+  border: 2px solid #1b3e5e;
+  border-top: 5px solid #1b3e5e;
+  transition: background-color 0.8s ease; /* Add a smooth transition effect */
+  cursor: pointer;
+  padding: 15px;
+  text-align: left;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.button:hover {
+  background-color: #eef7ff;
+  transition: background-color 0.8s ease;
+  border-top: 2px solid #365e9b;
+  border-bottom: 2px solid #4300a7;
+  border-left: 2px solid #4300a7;
+  border-right: 2px solid #0048ce;
+  /* background-image: 
+       linear-gradient(#794da3, rgb(123, 128, 225)),
+       linear-gradient(#794da3, rgb(123, 128, 225))
+  ; */
+ background-size:2px 100%;
+ background-position:0 0, 100% 0;
+ background-repeat:no-repeat;
+
+  /* transition: smooth; */
+}
+
+.sample__padding {
+  padding: 10%;
+}
+
+/* Footer.css */
+/* 
+.stringing__form {
+  margin-left: 225px;
+  width: 800px;
+  height: 500px;
+  background: rgba( 0,0,0, 0.25 );
+  box-shadow: 0px 8px 32px 0px rgb(255, 255, 255);
+  backdrop-filter: blur( 20px );
+  -webkit-backdrop-filter: blur( 20px );
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.063);
+  box-shadow: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+} */
+
+.footer {
+  margin-bottom: 0px;
+  background-color: rgb(35,63,75);
+  color: rgb(255, 255, 255);
+  /* height: 150px; */
+  /* text-align: center; */
+  /* padding: 20px; */
+  border-top: 2px solid #000000;
+}
+
+.my-table {
+  background-color: rgba(35,63,75,.85);
+  color: rgb(255, 255, 255);  
+}
+
+.login-box {
+  margin-left: 632.5px;
+  margin-top: 250px;
+  width: 600px;
+  height: 500px;
+  position: absolute;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  /* background: rgba(0,0,0,.5); */
+  box-sizing: border-box;
+  /* box-shadow: 0 15px 25px rgba(0,0,0,.6); */
+  border-radius: 10px;
+  /* background: rgba( 0,0,0, 0.25 ); */
+  box-shadow: 0 0 12px #b0d1e0;
+  backdrop-filter: blur( 200px );
+  -webkit-backdrop-filter: blur( 20px );
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.063);
+  /* box-shadow: 100px rgb(255, 255, 255,0.6); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 30px; /* Adjust the font size here */
+  color: white;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  background: transparent;
+}
+
+/* Increase font size for labels */
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 30px; /* Adjust the font size here */
+  color: white;
+  pointer-events: none;
+  transition: .3s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: white;
+  font-size: 20px;
+}
+
+.login-box form a {
+  /* position: relative; */
+  /* display: inline-block; */
+  padding: 10px 50px;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .3s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+.login-box a:hover {
+  background: #1b3e5e;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  font-weight: 600;
+  border: none;
+  outline: none;
+  color: rgba(0,0,0,.65);
+  background-color: inherit;
+  font-family: inherit;
+  /* transition: background-color 0.2s ease; */
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  /* transition: background-color 0.2s ease; */
+  border-radius: 5px;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 1px solid #000000;
+  /* transition: background-color 0.2s ease; */
+}
+
+.dropdown-content a:hover {
+  background-color: #2f3943;
+  color: white;
+  /* transition: 0.3s ease; */
+  border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropbtn:hover {
+  color: black;
+}
+
+
+
+
+
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+
+
+
+
+/*------------LESSONS PROS CARDS CSS ---------------*/
+.profile_area{
+  padding: 100px;
+}
+
+.card {
+  box-shadow: 0 0 10px rgba(255,255,255,.5);
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: #f3f6fc;
+  border: 2px solid #f3f6fc;
+}
+
+.announcement-card {
+  box-shadow: 0 0 10px rgb(35,63,75);
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #fff;
+  /* border: 2px solid rgb(35,63,75);
+  border-top: 5px solid rgb(35,63,75); */
+  /* border-top: 5px solid rgb(35,63,75); */
+  width: 400px;
+  height: 150px;
+}
+
+.home-card {
+  box-shadow: 0 0 10px rgb(35,63,75);
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid rgb(128, 128, 0);
+  border-top: 3px solid rgb(128, 128, 0);
+  /* border-top: 5px solid rgb(35,63,75); */
+  width: 400px;
+  height: 200px;
+}
+
+.home-card:hover {
+  background-color: rgb(232, 233, 235);
+}
+/* .card:hover {
+  /* border: 2px solid black; 
+} */
+
+.img1 img{
+  height: 175px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  width: 100%;
+}
+
+.img2 img{
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid rgb(255, 255, 255);
+  margin-top: -80px;
+}
+
+.card:hover .img2 img{
+  border-color: #728BA6;
+  transition: .5s;
+}
+
+
+.main-text{
+  padding: 30px 0;
+  text-align: center;
+}
+
+.main-text h2{
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0 0 20px;
+}
+
+.main-text p{
+  font-size: 16px;
+  padding: 0 35px;
+}
+
+.book-button{
+  padding: 5px;
+  /* margin-bottom: 20px; */
+  height: 50px;
+  backdrop-filter: blur(10px);
+  /* background-color: rgba(33, 42, 48,.8); */
+  border: 2px solid white;
+}
+
+.btn-light {
+  background-color: #728BA6;
+  color: white;
+  font-weight: 600;
+}
+
+.btn-dark {
+  background-color: rgb(35,63,75);
+  color: white;
+  /* font-weight: 600; */
+}
+
+.btn-light:hover {
+  border: 2px solid black;
+}
+
+/*-------- CALENDAR BOOKING CSS -------------------*/
+
+/* .App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+} */
+
+.selected-date {
+  margin: 0 auto;
+}
+
+.lessons__booking {
+  text-align: center;
+  margin: 0 auto;
+  width: 70%;
+  font-family: 'Montserrat', sans-serif;
+  padding: 50px;
+  color: rgb(30, 45, 65);
+}
+
+.calendar__times__container {
+  display: flex;
+  border: 1px solid rgb(118, 163, 219);
+  padding: 60px;
+  border-radius: 10px;
+  transition: all .5s ease;
+  /* background-color: white; */
+}
+
+.calendar-container {
+  margin-right: 20px; /* Adjust the margin as needed to create space */
+}
+
+.divider {
+  /* margin: 20px 0; Adjust the margin as needed to create space above and below the horizontal line */
+  border: none;
+  border-top: 100px solid #ccc; /* Style the horizontal line */
+}
+
+.time__container {
+  margin-left: 100px; /* Adjust the margin as needed to create space */
+}
+
+.react-calendar { 
+  width: 450px;
+  max-width: 100%;
+  background-color: rgba(255, 255, 255);
+  color: rgb(30, 45, 65);
+  border-radius: 10px;
+  box-shadow: 0 12px 24px rgba(30, 45, 65,.2);
+  /* font-family: Arial, Helvetica, sans-serif; */
+  line-height: 2em;
+  font-family: 'Montserrat', sans-serif;
+  padding: 30px;
+  transition: all .3s ease;
+  border: 1px solid rgb(118, 163, 219);
+  
+ }
+
+ .react-calendar__navigation button {
+  color: rgb(94, 118, 150);
+  min-width: 44px;
+  background:none;
+  font-size: 20px;
+  margin-top: 8px;
+  font-family: 'Montserrat', sans-serif;
+  transition: all .4s ease;
+  font-weight: 600;
+ }
+
+.react-calendar--doubleView {
+  width: 700px;
+  font-family: 'Montserrat', sans-serif;
+}
+.react-calendar--doubleView .react-calendar__viewContainer {
+  display: flex;
+  margin: -0.5em;
+  font-family: 'Montserrat', sans-serif;
+}
+.react-calendar--doubleView .react-calendar__viewContainer > * {
+  width: 50%;
+  margin: 0.5em;
+  font-family: 'Montserrat', sans-serif;
+}
+.react-calendar,
+.react-calendar *,
+.react-calendar *:before,
+.react-calendar *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+.react-calendar button {
+  margin: 0;
+  border: 0;
+  outline: none;
+
+}
+.react-calendar button:enabled:hover {
+  cursor: pointer;
+  transition: all .3s ease;
+}
+.react-calendar__navigation {
+  display: flex;
+  height: 44px;
+  margin-bottom: 1em;
+}
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+  font-family: 'Montserrat', sans-serif;
+}
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #d0e9ff;
+  border-radius: 10px;
+}
+.react-calendar__navigation button[disabled] {
+  background-color: #f0f0f0;
+}
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.75em;
+  font-family: 'Montserrat', sans-serif;
+}
+.react-calendar__month-view__weekdays__weekday {
+  padding: .5em;
+  font-family: 'Montserrat', sans-serif;
+}
+.react-calendar__month-view__weekNumbers .react-calendar__tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75em;
+  font-weight: bold;
+  padding: calc(0.75em / 0.75) calc(0.5em / 0.75);
+  font-family: 'Montserrat', sans-serif;
+}
+.react-calendar__month-view__days__day--weekend {
+
+  /* color: #d10000; */
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(0, 0, 0);
+}
+.react-calendar__month-view__days__day--neighboringMonth {
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(0, 0, 0,.55);
+}
+.react-calendar__year-view .react-calendar__tile,
+.react-calendar__decade-view .react-calendar__tile,
+.react-calendar__century-view .react-calendar__tile {
+  padding: 2em 0.5em;
+}
+.react-calendar__tile {
+  max-width: 100%;
+  text-align: center;
+  padding: 0.75em 0.5em;
+  background: none;
+  font-weight: 600;
+}
+.react-calendar__tile:disabled {
+  background-color: #4d1414;
+}
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #d0e9ff;
+  border-radius: 10px;;
+}
+.react-calendar__tile--now {
+  /* background: #ffff76; */
+  font-weight: 600;
+  color: #1192ef;
+  /* font-size: 16px; */
+}
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  background: #d0e9ff;
+}
+.react-calendar__tile--hasActive {
+  background: #d0e9ff;
+}
+.react-calendar__tile--hasActive:enabled:hover,
+.react-calendar__tile--hasActive:enabled:focus {
+  background: #2d445a;
+}
+.react-calendar__tile--active {
+  background: #d0e9ff;
+  /* color: white; */
+  border-radius: 10px;
+  font-weight: 600;
+}
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: #d0e9ff;
+}
+.react-calendar--selectRange .react-calendar__tile--hover {
+  background-color: #e6e6e6;
+}
