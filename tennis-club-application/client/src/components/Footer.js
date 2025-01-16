@@ -39,7 +39,7 @@ const Footer = () => {
                     </tr>
                     <tr>
                       <td>Sat - Sun:</td>
-                      <td>&nbsp;7am - 6am</td>
+                      <td>&nbsp;7am - 10pm</td>
                     </tr>
                   </tbody>
                 </table>

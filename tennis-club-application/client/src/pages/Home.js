@@ -36,6 +36,8 @@ const Home = () => {
     // Add more FAQ items as needed
   ];
 
+  console.log(faqData);
+
   return (
     <div>
       <Header />

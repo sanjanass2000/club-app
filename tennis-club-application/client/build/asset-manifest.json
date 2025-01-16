@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f7e1e4da.css",
+    "main.js": "/static/js/main.70f8b933.js",
+    "static/js/787.5159abaa.chunk.js": "/static/js/787.5159abaa.chunk.js",
+    "static/media/lesson_card_image.jpg": "/static/media/lesson_card_image.cbf2bbb9b8a0aad50f90.jpg",
+    "static/media/Tennis_Racket.jpg": "/static/media/Tennis_Racket.837a2c2ab01c0797c517.jpg",
+    "static/media/BC_Complete_layout5.webp": "/static/media/BC_Complete_layout5.01779bf0ccaea41372af.webp",
+    "static/media/BC_Complete_layout.jpg": "/static/media/BC_Complete_layout.f8b6a38d409c3e193553.jpg",
+    "static/media/BC_Complete_layout3.webp": "/static/media/BC_Complete_layout3.eff0220f6fdd2597db13.webp",
+    "index.html": "/index.html",
+    "main.f7e1e4da.css.map": "/static/css/main.f7e1e4da.css.map",
+    "main.70f8b933.js.map": "/static/js/main.70f8b933.js.map",
+    "787.5159abaa.chunk.js.map": "/static/js/787.5159abaa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f7e1e4da.css",
+    "static/js/main.70f8b933.js"
+  ]
+}

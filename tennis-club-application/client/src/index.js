@@ -14,6 +14,7 @@ import PackagesPage from './pages/Packages';
 import StringingPage from './pages/Stringing';
 import ContactPage from './pages/Contact';
 import Lessons_BookingPage from './pages/Lessons_Booking';
+import Kids_RegistrationPage from './pages/Kids_RegistrationPage';
 
 import {
   createBrowserRouter, 
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
   {
     path: "announcements",
     element: <AnnouncementsPage />
+  },
+  {
+    path: "kids_registration",
+    element: <Kids_RegistrationPage />
   },
 ]);
 
