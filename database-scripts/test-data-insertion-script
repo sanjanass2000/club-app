@@ -1,0 +1,56 @@
+-- Insert test users (password_hash would be properly hashed in real application)
+INSERT INTO users (email, password_hash, first_name, last_name, role, phone) VALUES
+('admin@tennis.com', 'test123', 'Admin', 'User', 'admin', '123-456-7890'),
+('coach.john@tennis.com', 'test123', 'John', 'Doe', 'instructor', '123-456-7891'),
+('coach.jane@tennis.com', 'test123', 'Jane', 'Smith', 'instructor', '123-456-7892'),
+('student1@tennis.com', 'test123', 'Bob', 'Wilson', 'student', '123-456-7893'),
+('student2@tennis.com', 'test123', 'Alice', 'Brown', 'student', '123-456-7894');
+
+-- Insert instructors
+INSERT INTO instructors (user_id, bio, hourly_rate) VALUES
+((SELECT id FROM users WHERE email = 'coach.john@tennis.com'), 
+ 'Professional tennis coach with 10 years of experience', 75.00),
+((SELECT id FROM users WHERE email = 'coach.jane@tennis.com'), 
+ 'Former professional player with expertise in youth training', 80.00);
+
+-- Insert classes
+INSERT INTO classes (name, description, instructor_id, max_capacity, duration_minutes) VALUES
+('Beginner Tennis', 'Introduction to tennis basics', 
+ (SELECT id FROM instructors WHERE user_id = (SELECT id FROM users WHERE email = 'coach.john@tennis.com')),
+ 6, 60),
+('Advanced Technique', 'Advanced stroke and strategy training', 
+ (SELECT id FROM instructors WHERE user_id = (SELECT id FROM users WHERE email = 'coach.jane@tennis.com')),
+ 4, 90),
+('Kids Group Class', 'Fun tennis basics for children', 
+ (SELECT id FROM instructors WHERE user_id = (SELECT id FROM users WHERE email = 'coach.jane@tennis.com')),
+ 8, 45);
+
+-- Insert sessions (for next 7 days)
+INSERT INTO sessions (class_id, start_time, end_time, court_number) 
+SELECT 
+  c.id,
+  CURRENT_DATE + n + make_interval(hours => hour)  AS start_time,
+  CURRENT_DATE + n + make_interval(hours => hour, mins => c.duration_minutes) AS end_time,
+  (n % 3) + 1 AS court_number
+FROM generate_series(0, 6) n
+CROSS JOIN (SELECT id, duration_minutes FROM classes) c
+CROSS JOIN (SELECT * FROM generate_series(9, 16, 2) hour)
+WHERE (n + extract(dow from CURRENT_DATE))::integer % 7 NOT IN (0); -- Exclude Sundays
+
+-- Insert some bookings
+INSERT INTO bookings (user_id, session_id, status) 
+SELECT 
+  (SELECT id FROM users WHERE email = 'student1@tennis.com'),
+  id,
+  'confirmed'
+FROM (SELECT id FROM sessions LIMIT 3) s;
+
+-- Insert instructor availability
+INSERT INTO instructor_availability (instructor_id, day_of_week, start_time, end_time)
+SELECT 
+  i.id,
+  d.day,
+  '09:00'::TIME,
+  '17:00'::TIME
+FROM instructors i
+CROSS JOIN (SELECT generate_series(1, 6) as day) d;
