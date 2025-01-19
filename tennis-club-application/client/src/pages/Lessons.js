@@ -1,9 +1,18 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Header from '../components/Header';
 import { Button, CardActionArea, CardActions, Grid } from "@mui/material";
 import Footer from "../components/Footer";
 
 function LessonsPage() {
+  const [instructors, setInstructors] = useState([]);
+
+  useEffect(() => {
+    // Fetch instructors from backend
+    fetch('http://localhost:3001/api/instructors')
+      .then(res => res.json())
+      .then(data => setInstructors(data))
+      .catch(err => console.error(err));
+  }, []);  
   return (
     <div>
       <Header />
