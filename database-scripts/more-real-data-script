@@ -1,0 +1,107 @@
+-- Drop existing tables in correct order (reverse dependency order)
+DROP TABLE IF EXISTS bookings CASCADE;
+DROP TABLE IF EXISTS coach_availability CASCADE;
+DROP TABLE IF EXISTS coaches CASCADE;
+DROP TABLE IF EXISTS members CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
+
+-- Create users table
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    phone VARCHAR(20),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create members table
+CREATE TABLE members (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    membership_number VARCHAR(50) UNIQUE NOT NULL,
+    membership_type VARCHAR(50) NOT NULL, -- e.g., 'full', 'tennis-only', 'social'
+    membership_start_date DATE NOT NULL,
+    membership_end_date DATE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create coaches table
+CREATE TABLE coaches (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    bio TEXT,
+    experience_years INTEGER,
+    certifications TEXT[],
+    hourly_rate DECIMAL(10,2),
+    profile_image_url VARCHAR(255),
+    active BOOLEAN DEFAULT true,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create coach_availability table
+CREATE TABLE coach_availability (
+    id SERIAL PRIMARY KEY,
+    coach_id INTEGER REFERENCES coaches(id),
+    day_of_week INTEGER CHECK (day_of_week BETWEEN 0 AND 6), -- 0 = Sunday, 6 = Saturday
+    start_time TIME NOT NULL,
+    end_time TIME NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT valid_time_range CHECK (start_time < end_time)
+);
+
+-- Create bookings table
+CREATE TABLE bookings (
+    id SERIAL PRIMARY KEY,
+    coach_id INTEGER REFERENCES coaches(id),
+    user_id INTEGER REFERENCES users(id),
+    booking_date DATE NOT NULL,
+    start_time TIME NOT NULL,
+    end_time TIME NOT NULL,
+    status VARCHAR(20) DEFAULT 'pending', -- pending, confirmed, cancelled, completed
+    is_member BOOLEAN NOT NULL,
+    total_price DECIMAL(10,2) NOT NULL,
+    notes TEXT,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT valid_booking_time CHECK (start_time < end_time)
+);
+
+-- Insert initial coach data
+INSERT INTO users (email, password_hash, first_name, last_name, phone) VALUES
+('monte.williams@bartoncreek.com', 'hashed_password', 'Monte', 'Williams', '555-0101'),
+('jorge.margiotta@bartoncreek.com', 'hashed_password', 'Jorge', 'Margiotta', '555-0102'),
+('chandler.harris@bartoncreek.com', 'hashed_password', 'Chandler', 'Harris', '555-0103');
+
+-- Insert coaches
+INSERT INTO coaches (user_id, bio, experience_years, certifications, hourly_rate, profile_image_url) VALUES
+((SELECT id FROM users WHERE email = 'monte.williams@bartoncreek.com'),
+ 'USPTA Elite Professional with over 15 years of teaching experience.',
+ 15,
+ ARRAY['USPTA Elite Professional', 'PTR Professional'],
+ 120.00,
+ '/images/monte_williams.jpg'),
+ 
+((SELECT id FROM users WHERE email = 'jorge.margiotta@bartoncreek.com'),
+ 'Former ATP tour player specializing in advanced technique and strategy.',
+ 12,
+ ARRAY['USPTA Professional', 'Former ATP Player'],
+ 110.00,
+ '/images/jorge_margiotta.jpg'),
+ 
+((SELECT id FROM users WHERE email = 'chandler.harris@bartoncreek.com'),
+ 'Certified tennis professional focusing on player development and junior programs.',
+ 8,
+ ARRAY['USPTA Professional', 'Junior Development Specialist'],
+ 100.00,
+ '/images/chandler_harris.jpg');
+
+-- Insert default availability for coaches (Mon-Sat, 8 AM to 6 PM)
+INSERT INTO coach_availability (coach_id, day_of_week, start_time, end_time)
+SELECT 
+    c.id as coach_id,
+    d.day as day_of_week,
+    '08:00'::TIME as start_time,
+    '18:00'::TIME as end_time
+FROM coaches c
+CROSS JOIN (SELECT generate_series(1,6) as day) d;
