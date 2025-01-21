@@ -1,44 +1,21 @@
-// const express = require('express');
-// const cors = require('cors');
-// const helmet = require('helmet');
-// require('dotenv').config();
-
-// const app = express();
-
-// // Middleware
-// app.use(cors());
-// app.use(helmet());
-// app.use(express.json());
-
-// // Test route
-// app.get('/', (req, res) => {
-//   res.json({ message: 'Welcome to Tennis Club API' });
-// });
-
-// const PORT = process.env.PORT || 5000;
-// app.listen(PORT, () => {
-//   console.log(`Server is running on port ${PORT}`);
-// });
-
-
+// server/src/index.js
 const express = require('express');
 const cors = require('cors');
-const { pool } = require('./config/database');
+require('dotenv').config();
 
 const app = express();
+const coachesRouter = require('./routes/coaches');
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
+// Routes
+app.use('/api/coaches', coachesRouter);
+
 // Test route
-app.get('/api/test', async (req, res) => {
-  try {
-    const result = await pool.query('SELECT NOW()');
-    res.json({ message: 'Database connected!', time: result.rows[0].now });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
+app.get('/', (req, res) => {
+  res.json({ message: 'Tennis Club API is running' });
 });
 
 const PORT = process.env.PORT || 3001;
