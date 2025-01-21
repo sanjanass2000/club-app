@@ -1,20 +1,16 @@
-// server/src/routes/coaches.js
 const express = require('express');
 const router = express.Router();
 const { pool } = require('../config/database');
 
-// Create new booking
 router.post('/:id/bookings', async (req, res) => {
   const client = await pool.connect();
   try {
     await client.query('BEGIN');
     const { id } = req.params;
-    const { date, startTime, name, phone, notes, isMember } = req.body;
+    const { date, startTime, name, phone, notes, total_price } = req.body;
     
-    // Convert startTime (e.g., "10:00") to proper time format
-    const endTime = startTime.split(':')[0] + ':59'; // Assume 1-hour slots
+    const endTime = startTime.split(':')[0] + ':59';
     
-    // Check if slot is already booked
     const conflictQuery = `
       SELECT COUNT(*) 
       FROM bookings 
@@ -31,18 +27,17 @@ router.post('/:id/bookings', async (req, res) => {
       throw new Error('Time slot already booked');
     }
     
-    // Create booking
     const insertQuery = `
       INSERT INTO bookings (
         coach_id, booking_date, start_time, end_time,
-        client_name, client_phone, notes, status, is_member
+        client_name, client_phone, notes, status, total_price, is_member
       )
-      VALUES ($1, $2, $3, $4, $5, $6, $7, 'confirmed', $8)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, 'confirmed', $8, false)
       RETURNING *
     `;
     
     const { rows: [booking] } = await client.query(insertQuery, [
-      id, date, startTime, endTime, name, phone, notes, isMember || false // Default to false if not provided
+      id, date, startTime, endTime, name, phone, notes || '', total_price
     ]);
     
     await client.query('COMMIT');

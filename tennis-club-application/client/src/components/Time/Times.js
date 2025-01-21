@@ -9,8 +9,7 @@ function Times(props) {
   const [bookingInfo, setBookingInfo] = useState({
     name: '',
     phone: '',
-    notes: '',
-    isMember: false  // Added this field
+    notes: ''
   });
 
   const handleTimeClick = (time) => {
@@ -32,7 +31,7 @@ function Times(props) {
           name: bookingInfo.name,
           phone: bookingInfo.phone,
           notes: bookingInfo.notes,
-          isMember: bookingInfo.isMember  // Added this field
+          total_price: 75.00 // Adding default price
         }),
       });
 
@@ -89,18 +88,6 @@ function Times(props) {
                   onChange={(e) => setBookingInfo({...bookingInfo, phone: e.target.value})}
                   className="form-input"
                 />
-              </div>
-
-              <div className="form-group checkbox-group">
-                <label>
-                  <input
-                    type="checkbox"
-                    checked={bookingInfo.isMember}
-                    onChange={(e) => setBookingInfo({...bookingInfo, isMember: e.target.checked})}
-                    className="form-checkbox"
-                  />
-                  I am a member
-                </label>
               </div>
               
               <div className="form-group">
