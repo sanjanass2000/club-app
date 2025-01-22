@@ -1,24 +1,103 @@
 /* Times.css */
 .time__button {
-    background-color: #ffffff; /* Blue background color */
-    color: #000000; /* White text color */
-    padding: 8px 16px; /* Padding around the text */
-    margin: 4px; /* Margin between buttons */
-    border: none; /* Remove the default button border */
-    cursor: pointer; /* Add a pointer cursor on hover */
-    border-radius: 4px;
-    height: 50px;
-    width: 200px;
-    font-family: 'Montserrat', sans-serif;
-    border: 1px solid rgb(118, 163, 219);
-    font-weight: 600;
-    transition: all .3s ease;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    
+  background-color: #ffffff;
+  color: #000000;
+  padding: 8px 16px;
+  margin: 4px;
+  border: 1px solid rgb(118, 163, 219);
+  border-radius: 4px;
+  height: 50px;
+  width: 200px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  transition: all .3s ease;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
 
-  }
-  
-  button:hover {
-    background-color: #bbd1e4; /* Darker blue color on hover */
-    /* transition: all .s ease; */
-  }
+.time__button:hover {
+  background-color: #bbd1e4;
+}
+
+.booking-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.booking-modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.booking-modal-content h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid rgb(118, 163, 219);
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.button-group {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.btn-book {
+  background-color: #728BA6;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.btn-cancel {
+  background-color: #f3f4f6;
+  color: #374151;
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.btn-book:hover {
+  background-color: #5a6f84;
+}
+
+.btn-cancel:hover {
+  background-color: #e5e7eb;
+}
