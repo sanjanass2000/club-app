@@ -34,7 +34,7 @@ function LessonsPage() {
           id: 3,
           first_name: 'Chandler',
           last_name: 'Harris',
-          bio: 'Certified tennis professional focusing on player development and junior programs.'
+          bio: 'Top Junior Tennis Professional with a focus in player development.'
         }
       ]);
     }

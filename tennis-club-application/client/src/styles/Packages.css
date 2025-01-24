@@ -1,0 +1,72 @@
+.main__packages {
+    margin-top: 80px;
+    text-align: center;
+    padding: 4rem 10%;
+    background: linear-gradient(to bottom, #728BA6, white);
+    min-height: calc(100vh - 80px);
+  }
+  
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 3rem auto;
+  }
+  
+  .package-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .package-title {
+    color: #233F4B;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .package-price {
+    color: #728BA6;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+  
+  .package-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    text-align: left;
+    flex-grow: 1;
+  }
+  
+  .package-features li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    color: #666;
+  }
+  
+  .package-features li:before {
+    content: "✓";
+    color: #233F4B;
+    margin-right: 0.5rem;
+  }
+  
+  .package-button {
+    background: #233F4B;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .package-button:hover {
+    background: #1b3e5e;
+  }

@@ -18,15 +18,6 @@ const Footer = () => {
                   <li class="mb-1">
                     <a href="#!"/* style="color: #4f4f4f;"*/>Frequently Asked Questions</a>
                   </li>
-                  <li class="mb-1">
-                    <a href="#!"/* style="color: #4f4f4f;"*/>Delivery</a>
-                  </li>
-                  <li class="mb-1">
-                    <a href="#!"/* style="color: #4f4f4f;"*/>Pricing</a>
-                  </li>
-                  <li>
-                    <a href="#!"/* style="color: #4f4f4f;"*/>Where we deliver?</a>
-                  </li>
                 </ul>
               </div>
               <div class="col-lg-3 col-md-6 mb-4">
@@ -35,11 +26,15 @@ const Footer = () => {
                   <tbody>
                     <tr>
                       <td>Mon - Fri: </td>
-                      <td>&nbsp;7am - 8pm</td>
+                      <td>&nbsp;8am - 8pm</td>
                     </tr>
                     <tr>
                       <td>Sat - Sun:</td>
-                      <td>&nbsp;7am - 10pm</td>
+                      <td>&nbsp;8am - 6pm</td>
+                    </tr>
+                    <tr>
+                      <td>Phone:</td>
+                      <td>&nbsp;(512) 329-4008</td>
                     </tr>
                   </tbody>
                 </table>

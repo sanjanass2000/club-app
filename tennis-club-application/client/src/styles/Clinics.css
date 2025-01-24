@@ -1,0 +1,107 @@
+.main__clinics {
+    margin-top: 80px;
+    text-align: center;
+    padding: 4rem 10%;
+    background: linear-gradient(to bottom, #728BA6, white);
+    min-height: calc(100vh - 80px);
+  }
+  
+  .clinics-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(35,63,75,0.2);
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .clinics-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .day-column {
+    min-width: 0;
+  }
+  
+  .day-header {
+    color: #233F4B;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: rgba(114, 139, 166, 0.1);
+    border-radius: 5px;
+  }
+  
+  .clinic-slot {
+    background: #233F4B;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+  
+  .clinic-slot:hover {
+    transform: translateY(-2px);
+    background: #1b3e5e;
+  }
+  
+  .clinic-name {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .clinic-time {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+  
+  .clinic-description {
+    background: rgba(35, 63, 75, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    text-align: left;
+  }
+  
+  .clinic-description h3 {
+    color: #233F4B;
+    margin-bottom: 1rem;
+  }
+  
+  .clinic-description p {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .week-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .week-navigation h2 {
+    color: #233F4B;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  
+  .btn-nav {
+    background: #233F4B;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-nav:hover {
+    background: #1b3e5e;
+  }

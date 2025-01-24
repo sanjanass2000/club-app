@@ -1,3 +1,127 @@
-.Card {
-    background-color: blacks;
-}
+.hero-section {
+    height: 90vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../public/BC_Complete_layout.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+  
+  .hero-content h1 {
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+  }
+  
+  .main-content {
+    padding: 4rem 10%;
+    background: white;
+  }
+  
+  .services-section {
+    margin-top: -100px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .service-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    height: 400px;
+    position: relative;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .service-image {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .service-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8));
+  }
+  
+  .service-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    color: white;
+  }
+  
+  .service-content h3 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+  
+  .service-content p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+  }
+  
+  .explore-button {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .explore-button:hover {
+    background: white;
+    color: #233F4B;
+  }
+  
+  .experience-section {
+    margin: 8rem 0;
+    text-align: center;
+  }
+  
+  .experience-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .experience-content h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    color: #233F4B;
+    margin-bottom: 2rem;
+  }
+  
+  .experience-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #666;
+  }

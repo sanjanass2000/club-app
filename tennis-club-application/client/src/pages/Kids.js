@@ -229,15 +229,237 @@
 
 
 
+// import React from "react";
+// import Header from "../components/Header";
+// import Footer from "../components/Footer";
+// import { Grid, Card, CardContent, Typography, Button } from "@mui/material";
+// import { useNavigate } from "react-router-dom";
+
+// function KidsPage() {
+//   const navigate = useNavigate();
+
+//   const programs = [
+//     {
+//       title: "Rippers: Ages 4-6",
+//       time: "4:00 - 5:00 PM",
+//       days: "Monday & Wednesday",
+//       memberPrice: "$225/Month",
+//       guestPrice: "$300/Month",
+//       link: "/register/rippers",
+//     },
+//     {
+//       title: "Ralliers: Ages 6-8",
+//       time: "4:00 - 5:00 PM",
+//       days: "Monday & Wednesday",
+//       memberPrice: "$225/Month",
+//       guestPrice: "$300/Month",
+//       link: "/register/ralliers",
+//     },
+//     {
+//       title: "Challengers: Ages 8-10",
+//       time: "4:00 - 5:30 PM",
+//       days: "Tuesday & Thursday",
+//       memberPrice: "$325/Month",
+//       guestPrice: "$400/Month",
+//       link: "/register/challengers",
+//     },
+//     {
+//       title: "Champions: Ages 10-12",
+//       time: "5:00 - 6:30 PM",
+//       days: "Monday & Wednesday",
+//       memberPrice: "$350/Month",
+//       guestPrice: "$425/Month",
+//       link: "/register/champions",
+//     },
+//     {
+//       title: "Teen Clinic: Ages 13+",
+//       time: "5:00 - 6:30 PM",
+//       days: "Monday & Wednesday",
+//       memberPrice: "$350/Month",
+//       guestPrice: "$425/Month",
+//       link: "/register/teen-clinic",
+//     },
+//     {
+//       title: "Tournament Team: Ages 10+",
+//       time: "4:00 - 5:00 PM",
+//       days: "Monday & Wednesday",
+//       memberPrice: "$225/Month",
+//       guestPrice: "$300/Month",
+//       link: "/kids_registration",
+//     },
+//   ];
+
+//   return (
+//     <div>
+//       <Header />
+//       <main style={{ backgroundColor: "#fff", padding: "2rem" }}>
+//         <Typography
+//           variant="h3"
+//           align="center"
+//           gutterBottom
+//           style={{ marginBottom: "2rem", fontWeight: "bold" }}
+//         >
+//           Welcome to Barton Creek Junior Tennis Academy
+//         </Typography>
+//         <Grid container spacing={4}>
+//           {programs.map((program, index) => (
+//             <Grid item xs={12} sm={6} md={4} key={index}>
+//               <Card
+//                 style={{
+//                   backgroundColor: "#fff",
+//                   boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+//                 }}
+//               >
+//                 <CardContent>
+//                   <Typography variant="h5" style={{ fontWeight: "bold" }}>
+//                     {program.title}
+//                   </Typography>
+//                   <Typography variant="body2" style={{ margin: "0.5rem 0" }}>
+//                     {program.time}
+//                   </Typography>
+//                   <Typography variant="body2">{program.days}</Typography>
+//                   <Typography
+//                     variant="body2"
+//                     style={{ marginTop: "0.5rem", fontWeight: "bold" }}
+//                   >
+//                     Member: {program.memberPrice}
+//                   </Typography>
+//                   <Typography variant="body2">
+//                     Guest of Member: {program.guestPrice}
+//                   </Typography>
+//                 </CardContent>
+//                 <Button
+//                   onClick={() => navigate(program.link)}
+//                   variant="contained"
+//                   style={{
+//                     backgroundColor: "#34c759",
+//                     color: "#fff",
+//                     margin: "1rem",
+//                   }}
+//                 >
+//                   Register Now
+//                 </Button>
+//               </Card>
+//             </Grid>
+//           ))}
+//         </Grid>
+//       </main>
+//       <Footer />
+//     </div>
+//   );
+// }
+
+// export default KidsPage;
+
+
+// import React from "react";
+// import { Grid, Card, CardContent, Typography, Button } from "@mui/material";
+// import { useNavigate } from "react-router-dom";
+
+// const KidsPage = () => {
+//   const navigate = useNavigate();
+
+//   const programs = [
+//     {
+//       title: "Rippers: Ages 4-6",
+//       time: "4:00 - 5:00 PM",
+//       days: "Monday & Wednesday",
+//       memberPrice: "$225/Month",
+//       guestPrice: "$300/Month",
+//       link: "/register/rippers",
+//     },
+//     {
+//       title: "Ralliers: Ages 6-8",
+//       time: "4:00 - 5:00 PM", 
+//       days: "Monday & Wednesday",
+//       memberPrice: "$225/Month",
+//       guestPrice: "$300/Month",
+//       link: "/register/ralliers",
+//     },
+//     {
+//       title: "Challengers: Ages 8-10",
+//       time: "4:00 - 5:30 PM",
+//       days: "Tuesday & Thursday",
+//       memberPrice: "$325/Month",
+//       guestPrice: "$400/Month",
+//       link: "/register/challengers",
+//     },
+//     {
+//       title: "Champions: Ages 10-12",
+//       time: "5:00 - 6:30 PM",
+//       days: "Monday & Wednesday",
+//       memberPrice: "$350/Month",
+//       guestPrice: "$425/Month",
+//       link: "/register/champions",
+//     },
+//     {
+//       title: "Teen Clinic: Ages 13+",
+//       time: "5:00 - 6:30 PM",
+//       days: "Monday & Wednesday",
+//       memberPrice: "$350/Month",
+//       guestPrice: "$425/Month",
+//       link: "/register/teen-clinic",
+//     },
+//     {
+//       title: "Tournament Team: Ages 10+",
+//       time: "4:00 - 5:00 PM",
+//       days: "Monday & Wednesday",
+//       memberPrice: "$225/Month",
+//       guestPrice: "$300/Month",
+//       link: "/kids_registration",
+//     },
+//   ];
+
+//   return (
+//     <div>
+//       <header style={{ backgroundColor: "#1d3557", color: "#fff", padding: "1rem" }}>
+//         <Typography variant="h4" align="center">Barton Creek Junior Tennis Academy</Typography>
+//       </header>
+//       <main style={{ backgroundColor: "#f1f1f1", padding: "2rem" }}>
+//         <Typography variant="h3" align="center" gutterBottom style={{ fontWeight: "bold" }}>
+//           Kids Programs
+//         </Typography>
+//         <Grid container spacing={4}>
+//           {programs.map((program, index) => (
+//             <Grid item xs={12} sm={6} md={4} key={index}>
+//               <Card style={{ backgroundColor: "#fff", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}>
+//                 <CardContent>
+//                   <Typography variant="h5" style={{ fontWeight: "bold" }}>{program.title}</Typography>
+//                   <Typography variant="body2" style={{ margin: "0.5rem 0" }}>{program.time}</Typography>
+//                   <Typography variant="body2">{program.days}</Typography>
+//                   <Typography variant="body2" style={{ marginTop: "0.5rem", fontWeight: "bold" }}>
+//                     Member: {program.memberPrice}
+//                   </Typography>
+//                   <Typography variant="body2">Guest of Member: {program.guestPrice}</Typography>
+//                 </CardContent>
+//                 <Button
+//                   onClick={() => navigate(program.link)}
+//                   variant="contained"
+//                   style={{ backgroundColor: "#34c759", color: "#fff", margin: "1rem" }}
+//                 >
+//                   Register Now
+//                 </Button>
+//               </Card>
+//             </Grid>
+//           ))}
+//         </Grid>
+//       </main>
+//     </div>
+//   );
+// };
+
+// export default KidsPage;
+
+
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { motion } from 'framer-motion';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Grid, Card, CardContent, Typography, Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import "../styles/Kids.css";
 
-function KidsPage() {
+const KidsPage = () => {
   const navigate = useNavigate();
-
   const programs = [
     {
       title: "Rippers: Ages 4-6",
@@ -245,7 +467,7 @@ function KidsPage() {
       days: "Monday & Wednesday",
       memberPrice: "$225/Month",
       guestPrice: "$300/Month",
-      link: "/register/rippers",
+      link: "/register/rippers"
     },
     {
       title: "Ralliers: Ages 6-8",
@@ -253,7 +475,7 @@ function KidsPage() {
       days: "Monday & Wednesday",
       memberPrice: "$225/Month",
       guestPrice: "$300/Month",
-      link: "/register/ralliers",
+      link: "/register/ralliers"
     },
     {
       title: "Challengers: Ages 8-10",
@@ -261,7 +483,7 @@ function KidsPage() {
       days: "Tuesday & Thursday",
       memberPrice: "$325/Month",
       guestPrice: "$400/Month",
-      link: "/register/challengers",
+      link: "/register/challengers"
     },
     {
       title: "Champions: Ages 10-12",
@@ -269,7 +491,7 @@ function KidsPage() {
       days: "Monday & Wednesday",
       memberPrice: "$350/Month",
       guestPrice: "$425/Month",
-      link: "/register/champions",
+      link: "/register/champions"
     },
     {
       title: "Teen Clinic: Ages 13+",
@@ -277,7 +499,7 @@ function KidsPage() {
       days: "Monday & Wednesday",
       memberPrice: "$350/Month",
       guestPrice: "$425/Month",
-      link: "/register/teen-clinic",
+      link: "/register/teen-clinic"
     },
     {
       title: "Tournament Team: Ages 10+",
@@ -285,68 +507,56 @@ function KidsPage() {
       days: "Monday & Wednesday",
       memberPrice: "$225/Month",
       guestPrice: "$300/Month",
-      link: "/kids_registration",
-    },
+      link: "/kids_registration"
+    }
   ];
 
   return (
     <div>
       <Header />
-      <main style={{ backgroundColor: "#fff", padding: "2rem" }}>
-        <Typography
-          variant="h3"
-          align="center"
-          gutterBottom
-          style={{ marginBottom: "2rem", fontWeight: "bold" }}
-        >
-          Welcome to Barton Creek Junior Tennis Academy
-        </Typography>
-        <Grid container spacing={4}>
-          {programs.map((program, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <Card
-                style={{
-                  backgroundColor: "#fff",
-                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-                }}
-              >
-                <CardContent>
-                  <Typography variant="h5" style={{ fontWeight: "bold" }}>
-                    {program.title}
-                  </Typography>
-                  <Typography variant="body2" style={{ margin: "0.5rem 0" }}>
-                    {program.time}
-                  </Typography>
-                  <Typography variant="body2">{program.days}</Typography>
-                  <Typography
-                    variant="body2"
-                    style={{ marginTop: "0.5rem", fontWeight: "bold" }}
-                  >
-                    Member: {program.memberPrice}
-                  </Typography>
-                  <Typography variant="body2">
-                    Guest of Member: {program.guestPrice}
-                  </Typography>
-                </CardContent>
-                <Button
-                  onClick={() => navigate(program.link)}
-                  variant="contained"
-                  style={{
-                    backgroundColor: "#34c759",
-                    color: "#fff",
-                    margin: "1rem",
-                  }}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <main className="main__kids">
+          <section className="first__section">
+            <h1 className="heading">Barton Creek Junior Tennis Academy</h1>
+            <h2 className="subheading">Kids Programs</h2>
+            
+            <div className="programs-grid">
+              {programs.map((program, index) => (
+                <motion.div
+                  key={program.title}
+                  className="program-card"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
                 >
-                  Register Now
-                </Button>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </main>
+                  <div className="program-content">
+                    <h3>{program.title}</h3>
+                    <p className="time">{program.time}</p>
+                    <p className="days">{program.days}</p>
+                    <div className="pricing">
+                      <p className="member-price">Member: {program.memberPrice}</p>
+                      <p>Guest of Member: {program.guestPrice}</p>
+                    </div>
+                  </div>
+                  <button 
+                    className="register-button"
+                    onClick={() => navigate(program.link)}
+                  >
+                    REGISTER NOW
+                  </button>
+                </motion.div>
+              ))}
+            </div>
+          </section>
+        </main>
+      </motion.div>
       <Footer />
     </div>
   );
-}
+};
 
 export default KidsPage;

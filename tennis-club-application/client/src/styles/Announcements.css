@@ -1,0 +1,65 @@
+.main__announcements {
+    margin-top: 80px;
+    text-align: center;
+    padding: 10%;
+    background: linear-gradient(to bottom, #728BA6, white);
+    min-height: calc(100vh - 80px);
+  }
+  
+  .announcements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 3rem auto;
+  }
+  
+  .announcement-card {
+    background: white;
+    border-radius: 10px;
+    padding: 2.5rem;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    min-height: 200px;
+  }
+  
+  .announcement-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .announcement-title {
+    color: #233F4B;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .announcement-date {
+    color: #728BA6;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .announcement-content {
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .search-container {
+    max-width: 600px;
+    margin: 2rem auto;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: 2px solid #728BA6;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .search-input:focus {
+    border-color: #233F4B;
+  }

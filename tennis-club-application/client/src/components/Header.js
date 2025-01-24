@@ -51,7 +51,7 @@ function Header() {
               <a href="/stringing" class="nav__link">Stringing</a>
             </li> */}
             <li class = "nav__item">
-              <a href="/" class="nav__link">About</a>
+              <a href="/about" class="nav__link">About</a>
             </li>
             <li class = "nav__item">
               <a href="/announcements" class="nav__link">Announce</a>

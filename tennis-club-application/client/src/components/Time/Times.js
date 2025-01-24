@@ -91,7 +91,7 @@ function Times(props) {
               </div>
               
               <div className="form-group">
-                <label>Notes:</label>
+                <label>Additional Notes:</label>
                 <textarea
                   value={bookingInfo.notes}
                   onChange={(e) => setBookingInfo({...bookingInfo, notes: e.target.value})}

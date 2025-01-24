@@ -101,3 +101,20 @@
 .btn-cancel:hover {
   background-color: #e5e7eb;
 }
+
+
+/* Calendar styling */
+.react-calendar__tile:disabled 
+{
+    background-color: #f0f0f0 !important;
+}
+
+
+.react-calendar__tile--now {
+  background: #ffffff !important;
+}
+
+/* Remove the burgundy background */
+.react-calendar__month-view__days {
+  background-color: transparent !important;
+}

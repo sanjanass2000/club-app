@@ -1,0 +1,85 @@
+.main__kids {
+    margin-top: 80px;
+    text-align: center;
+    padding: 4rem 10%;
+    background: linear-gradient(to bottom, #728BA6, white);
+    min-height: calc(100vh - 80px);
+  }
+  
+  .heading {
+    color: white;
+    font-size: 45px;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .subheading {
+    color: #233F4B;
+    font-size: 35px;
+    margin-bottom: 50px;
+    font-weight: 600;
+  }
+  
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 0 auto;
+    max-width: 1400px;
+  }
+  
+  .program-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+  }
+  
+  .program-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .program-content {
+    padding: 2rem;
+    flex-grow: 1;
+  }
+  
+  .program-content h3 {
+    color: #233F4B;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .time, .days {
+    color: #666;
+    margin: 0.5rem 0;
+  }
+  
+  .pricing {
+    margin-top: 1.5rem;
+  }
+  
+  .member-price {
+    color: #233F4B;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .register-button {
+    background: #1b3e5e;
+    color: white;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .register-button:hover {
+    background: #233F4B;
+  }
