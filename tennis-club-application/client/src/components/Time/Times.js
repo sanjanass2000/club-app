@@ -31,7 +31,7 @@ function Times(props) {
           name: bookingInfo.name,
           phone: bookingInfo.phone,
           notes: bookingInfo.notes,
-          total_price: 75.00 // Adding default price
+          total_price: 90.00 // Adding default price
         }),
       });
 

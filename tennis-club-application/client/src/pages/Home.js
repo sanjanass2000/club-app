@@ -414,19 +414,19 @@ const Home = () => {
       title: "Private Lessons",
       description: "Elite instruction tailored to your game",
       path: "/lessons",
-      image: "lessons_image.png"
+      image: "BC_Complete_layout2.gif"
     },
     {
       title: "Tennis Clinics",
       description: "Group training with our master professionals",
       path: "/clinics",
-      image: "clinic_img.png"
+      image: "BC_Complete_layout3.png"
     },
     {
       title: "Junior Academy",
       description: "Developing tomorrow's champions",
       path: "/kids",
-      image: "kids_clinic_img.png"
+      image: "BC_Complete_layout4.jpg"
     },
     {
       title: "Court Reservations",
@@ -438,13 +438,13 @@ const Home = () => {
       title: "Membership",
       description: "Experience tennis at its finest",
       path: "/packages",
-      image: "BC_Complete_layout3.webp"
+      image: "Resort-2.jpeg"
     },
     {
       title: "Pro Shop Services",
       description: "Professional equipment and stringing",
       path: "/stringing",
-      image: "Tennis_Racket.jpg"
+      image: "BC_Complete_layout7.gif"
     }
   ];
 
