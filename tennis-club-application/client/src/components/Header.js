@@ -1,5 +1,6 @@
 import React from 'react';
 //import './Header.css'
+// import './header.css';
 
 function Header() {
   const headingStyle = {
@@ -54,7 +55,7 @@ function Header() {
               <a href="/about" class="nav__link">About</a>
             </li>
             <li class = "nav__item">
-              <a href="/announcements" class="nav__link">Announce</a>
+              <a href="/announcements" class="nav__link">Announcements</a>
             </li>
           </ul>
         </nav>
@@ -73,3 +74,78 @@ function Header() {
 }
 
 export default Header;
+
+
+// import React, { useState, useEffect } from 'react';
+// import { motion, useScroll, useTransform } from 'framer-motion';
+
+// const Header = () => {
+//   const [isScrolled, setIsScrolled] = useState(false);
+//   const { scrollY } = useScroll();
+
+//   useEffect(() => {
+//     const updateHeader = () => {
+//       const scrolled = window.scrollY > 50;
+//       setIsScrolled(scrolled);
+//     };
+
+//     window.addEventListener('scroll', updateHeader);
+//     return () => window.removeEventListener('scroll', updateHeader);
+//   }, []);
+
+//   return (
+//     <motion.header
+//       className={`header fixed w-full transition-all duration-300 ${
+//         isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+//       }`}
+//       style={{
+//         zIndex: 1000,
+//       }}
+//     >
+//       <div className="header__content">
+//         <img src="/BC_LOGO.gif" href="/" alt="bc__logo" className="bc_logo w-[102px] h-[58px]" />
+//         <a href="/" className={`logo ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
+//           Barton Creek Tennis
+//         </a>
+
+//         <nav className="nav">
+//           <ul className="nav__list">
+//             <li className="nav__item">
+//               <a href="/" className={`nav__link ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
+//                 Home
+//               </a>
+//             </li>
+//             <li className="nav__item">
+//               <div className="dropdown">
+//                 <button className={`dropbtn ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
+//                   Services&nbsp;
+//                   <i className="fa fa-caret-down"></i>
+//                 </button>
+//                 <div className="dropdown-content">
+//                   <a href="/lessons">Lessons</a>
+//                   <a href="/clinics">Clinics</a>
+//                   <a href="/kids">Kids</a>
+//                   <a href="/rentals">Rentals</a>
+//                   <a href="/packages">Packages</a>
+//                   <a href="/stringing">Stringing</a>
+//                 </div>
+//               </div>
+//             </li>
+//             <li className="nav__item">
+//               <a href="/about" className={`nav__link ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
+//                 About
+//               </a>
+//             </li>
+//             <li className="nav__item">
+//               <a href="/announcements" className={`nav__link ${isScrolled ? 'text-gray-800' : 'text-white'}`}>
+//                 Announcements
+//               </a>
+//             </li>
+//           </ul>
+//         </nav>
+//       </div>
+//     </motion.header>
+//   );
+// };
+
+// export default Header;

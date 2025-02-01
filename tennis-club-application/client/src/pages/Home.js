@@ -398,23 +398,203 @@
 
 
 
-import React from "react";
+// import React from "react";
+// import { Grid } from "@mui/material";
+// import { motion } from 'framer-motion';
+// import { useNavigate } from "react-router-dom";
+// import Header from "../components/Header";
+// import Footer from "../components/Footer";
+// import "../styles/Home.css";
+
+// const Home = () => {
+//   const navigate = useNavigate();
+
+//   const services = [
+//     {
+//       title: "Private Lessons",
+//       description: "Elite instruction tailored to your game",
+//       path: "/lessons",
+//       image: "BC_Complete_layout5.webp"
+//     },
+//     {
+//       title: "Tennis Clinics",
+//       description: "Group training with our master professionals",
+//       path: "/clinics",
+//       image: "BC_Complete_layout3.png"
+//     },
+//     {
+//       title: "Junior Academy",
+//       description: "Developing tomorrow's champions",
+//       path: "/kids",
+//       image: "BC_Complete_layout4.jpg"
+//     },
+//     {
+//       title: "Court Reservations",
+//       description: "Premium courts for your perfect match",
+//       path: "/rentals",
+//       image: "Resort-2.jpeg"
+//     },
+//     {
+//       title: "Membership",
+//       description: "Experience tennis at its finest",
+//       path: "/packages",
+//       image: "ausrst-canyons-grill.jpg"
+//     },
+//     {
+//       title: "Pro Shop Services",
+//       description: "Professional equipment and stringing",
+//       path: "/stringing",
+//       image: "BC_Complete_layout2.gif"
+//     }
+//   ];
+
+//   return (
+//     <div className="home">
+//       <Header />
+      
+//       <motion.div 
+//         className="hero-section"
+//         initial={{ opacity: 0 }}
+//         animate={{ opacity: 1 }}
+//         transition={{ duration: 1 }}
+//       >
+//         <div className="hero-content">
+//           <h1>BARTON CREEK TENNIS</h1>
+//           <p>Where Tradition Meets Excellence</p>
+//         </div>
+//       </motion.div>
+
+//       <main className="main-content">
+//         <section className="services-section">
+//           <Grid container spacing={3}>
+//             {services.map((service, index) => (
+//               <Grid item xs={12} md={4} key={service.title}>
+//                 <motion.div
+//                   className="service-card"
+//                   initial={{ opacity: 0, y: 20 }}
+//                   animate={{ opacity: 1, y: 0 }}
+//                   transition={{ delay: index * 0.1 }}
+//                   onClick={() => navigate(service.path)}
+//                 >
+//                   <div className="service-image" style={{ backgroundImage: `url(${service.image})` }}>
+//                     <div className="service-overlay" />
+//                   </div>
+//                   <div className="service-content">
+//                     <h3>{service.title}</h3>
+//                     <p>{service.description}</p>
+//                     <button className="explore-button">Explore</button>
+//                   </div>
+//                 </motion.div>
+//               </Grid>
+//             ))}
+//           </Grid>
+//         </section>
+
+//         <section className="experience-section">
+//           <div className="experience-content">
+//             <h2>THE BARTON CREEK EXPERIENCE</h2>
+//             <p>Discover a tennis legacy spanning over three decades. Our world-class facilities and dedicated professionals create an unparalleled environment for players of all levels.</p>
+//           </div>
+//         </section>
+//       </main>
+//       <Footer />
+//     </div>
+//   );
+// };
+
+// export default Home;
+
+
+import React, { useEffect } from "react";
 import { Grid } from "@mui/material";
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { useNavigate } from "react-router-dom";
+import { useInView } from 'react-intersection-observer';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../styles/Home.css";
 
-const Home = () => {
+const ServiceCard = ({ service, index }) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+    triggerOnce: true
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, delay: index * 0.1 }
+      });
+    }
+  }, [controls, inView, index]);
+
   const navigate = useNavigate();
 
+  return (
+    <motion.div
+      ref={ref}
+      className="service-card"
+      initial={{ opacity: 0, y: 50 }}
+      animate={controls}
+      onClick={() => navigate(service.path)}
+    >
+      <div 
+        className="service-image" 
+        style={{ backgroundImage: `url(${service.image})` }}
+      >
+        <div className="service-overlay" />
+        <div className="service-content">
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+          <button className="explore-button">Explore</button>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+const ExperienceSection = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+    triggerOnce: true
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.7 }
+      });
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.section
+      ref={ref}
+      className="experience-section"
+      initial={{ opacity: 0, y: 50 }}
+      animate={controls}
+    >
+      <div className="experience-content">
+        <h2>THE BARTON CREEK EXPERIENCE</h2>
+        <p>Discover a tennis legacy spanning over three decades. Our world-class facilities and dedicated professionals create an unparalleled environment for players of all levels.</p>
+      </div>
+    </motion.section>
+  );
+};
+
+const Home = () => {
   const services = [
     {
       title: "Private Lessons",
       description: "Elite instruction tailored to your game",
       path: "/lessons",
-      image: "BC_Complete_layout2.gif"
+      image: "BC_Complete_layout5.webp"
     },
     {
       title: "Tennis Clinics",
@@ -432,24 +612,24 @@ const Home = () => {
       title: "Court Reservations",
       description: "Premium courts for your perfect match",
       path: "/rentals",
-      image: "BC_Complete_layout5.webp"
+      image: "Resort-2.jpeg"
     },
     {
       title: "Membership",
       description: "Experience tennis at its finest",
       path: "/packages",
-      image: "Resort-2.jpeg"
+      image: "ausrst-canyons-grill.jpg"
     },
     {
       title: "Pro Shop Services",
       description: "Professional equipment and stringing",
       path: "/stringing",
-      image: "BC_Complete_layout7.gif"
+      image: "BC_Complete_layout2.gif"
     }
   ];
 
   return (
-    <div className="home">
+    <div className="home relative">
       <Header />
       
       <motion.div 
@@ -469,33 +649,13 @@ const Home = () => {
           <Grid container spacing={3}>
             {services.map((service, index) => (
               <Grid item xs={12} md={4} key={service.title}>
-                <motion.div
-                  className="service-card"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  onClick={() => navigate(service.path)}
-                >
-                  <div className="service-image" style={{ backgroundImage: `url(${service.image})` }}>
-                    <div className="service-overlay" />
-                  </div>
-                  <div className="service-content">
-                    <h3>{service.title}</h3>
-                    <p>{service.description}</p>
-                    <button className="explore-button">Explore</button>
-                  </div>
-                </motion.div>
+                <ServiceCard service={service} index={index} />
               </Grid>
             ))}
           </Grid>
         </section>
 
-        <section className="experience-section">
-          <div className="experience-content">
-            <h2>THE BARTON CREEK EXPERIENCE</h2>
-            <p>Discover a tennis legacy spanning over three decades. Our world-class facilities and dedicated professionals create an unparalleled environment for players of all levels.</p>
-          </div>
-        </section>
+        <ExperienceSection />
       </main>
       <Footer />
     </div>

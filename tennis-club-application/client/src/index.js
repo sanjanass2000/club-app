@@ -16,6 +16,8 @@ import ContactPage from './pages/Contact';
 import AboutPage from './pages/About';
 import Lessons_BookingPage from './pages/Lessons_Booking';
 import Kids_RegistrationPage from './pages/Kids_RegistrationPage';
+import AdminLayout from './pages/admin/AdminLayout';
+import AdminDashboard from './pages/admin/Dashboard';
 
 import {
   createBrowserRouter, 
@@ -72,6 +74,14 @@ const router = createBrowserRouter([
   {
     path: "about",
     element: <AboutPage />
+  },
+  {
+    path: "admin",
+    element: <AdminLayout />
+  },
+  {
+    path: "admin/dashboard",
+    element: <AdminDashboard />
   },
 ]);
 

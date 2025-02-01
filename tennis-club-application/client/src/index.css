@@ -1,3 +1,10 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap'); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 * {
   margin: 0;
   padding: 0;
@@ -45,6 +52,74 @@ h1 {
   font-size: 17px;
 }
 
+/* Header CSS */
+
+
+.header {
+  background-color: rgba(255, 255, 255,.95);
+  border-bottom: 2px solid rgb(23, 106, 138);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 20px rgba(0,0,0,.3);
+  z-index: 2;
+}
+
+.header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+  min-height: 100px;
+ }
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+ }
+
+.bc_logo {
+  margin-right: 1rem;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.nav {
+  margin-left: auto;
+ }
+ 
+ .nav__list {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 15px;
+ }
+
+.nav__link {
+  color: #4A5568;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav__link:hover {
+  color: #2D3748;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.dropbtn {
+  color: #4A5568;
+  font-weight: 500;
+}
+
+
+/* 
 .header {
   background-color: rgba(255, 255, 255,.9);
   border-bottom: 2px solid rgb(23, 106, 138);
@@ -67,7 +142,7 @@ h1 {
 }
 
 .header__content .logo {
-  margin-right: 640px; /* Adjust this margin to your preference */
+  margin-right: 640px; 
 }
 
 .logo {
@@ -92,7 +167,7 @@ h1 {
   font-weight: 600;
   transition: all 0.2s;
   font-size: 16px;
-}
+} */
 
 /* .nav__link::before {
   position: absolute;
@@ -117,8 +192,8 @@ h1 {
 }
 
 .main__home {
-  padding-top: 80px;;
-  margin-top: 80px;
+  padding-top: 100px;;
+  margin-top: 100px;
   text-align: center;
   padding: 10%;
   background-image:
@@ -129,7 +204,7 @@ h1 {
 }
 
 .main__lessons{
-  margin-top: 80px;
+  margin-top: 100px;
   text-align: center;
   padding: 10%;
   /* background: #728BA6; */
@@ -142,7 +217,7 @@ h1 {
 }
 
 .main__kids{
-  margin-top: 80px;
+  margin-top: 100px;
   text-align: center;
   padding: 10%;
   background-image:
@@ -154,7 +229,7 @@ h1 {
 }
 
 .main__clinics{
-  margin-top: 80px;
+  margin-top: 100px;
   text-align: center;
   padding: 10%;
   background-image: 
@@ -173,7 +248,7 @@ h1 {
 }
 
 .main__rentals{
-  margin-top: 80px;
+  margin-top: 100px;
   text-align: center;
   padding: 10%;
   background-image:
@@ -184,7 +259,7 @@ h1 {
 }
 
 .main__packages{
-  margin-top: 80px;
+  margin-top: 100px;
   text-align: center;
   padding: 10%;
   background-image:
@@ -196,7 +271,7 @@ h1 {
 
 
 .main__stringing{
-  margin-top: 80px;
+  margin-top: 100px;
   text-align: center;
   padding: 10%;
   background-image:
@@ -206,7 +281,7 @@ h1 {
   background-repeat: no-repeat;
 }
 .main__contact{
-  margin-top: 80px;
+  margin-top: 100px;
   text-align: center;
   padding: 10%;
   /* background-image:
@@ -218,7 +293,7 @@ h1 {
 }
 
 .main__lessons__booking {
-  margin-top: 80px;
+  margin-top: 100px;
   text-align: center;
   padding: 5%;
   /*
@@ -244,7 +319,7 @@ h1 {
 
 
 .main__announcements{
-  margin-top: 80px;
+  margin-top: 120px;
   text-align: center;
   padding: 10%;
   /* background-image:
@@ -512,7 +587,7 @@ h1 {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   /* transition: background-color 0.2s ease; */
-  border-radius: 5px;
+  /* border-radius: 1px; */
 }
 
 .dropdown-content a {
@@ -531,7 +606,7 @@ h1 {
   background-color: #2f3943;
   color: white;
   /* transition: 0.3s ease; */
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 .dropdown:hover .dropdown-content {
@@ -553,115 +628,114 @@ h1 {
 
 
 /*------------LESSONS PROS CARDS CSS ---------------*/
-.profile_area{
-  padding: 100px;
+
+/*------------LESSONS PROS CARDS CSS ---------------*/
+.main__lessons {
+  margin-top: 100px;
+  text-align: center;
+  padding: 10%;
+  background: linear-gradient(to bottom, rgba(114, 139, 166, 0.8), rgba(255, 255, 255, 0.9));
+  min-height: 100vh;
 }
 
-.card {
-  box-shadow: 0 0 10px rgba(255,255,255,.5);
-  overflow: hidden;
+.first__section {
+  padding-top: 2rem;
+}
+
+.heading {
+  color: white;
+  font-size: 45px;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+.profile-area {
+  padding: 2rem 0;
+}
+
+/* New card styles specifically for lessons */
+.lessons-card {
+  background: white;
   border-radius: 15px;
-  background-color: #f3f6fc;
-  border: 2px solid #f3f6fc;
-}
-
-.announcement-card {
-  box-shadow: 0 0 10px rgb(35,63,75);
   overflow: hidden;
-  border-radius: 10px;
-  background-color: #fff;
-  /* border: 2px solid rgb(35,63,75);
-  border-top: 5px solid rgb(35,63,75); */
-  /* border-top: 5px solid rgb(35,63,75); */
-  width: 400px;
-  height: 150px;
-}
-
-.home-card {
-  box-shadow: 0 0 20px rgb(35,63,75);
-  overflow: hidden;
-  border-radius: 10px;
-  background-color: #fff;
-  border: 3px solid rgb(35,63,75);
-  /* border-top: 3px solid rgb(128, 128, 0); */
-  /* border-top: 5px solid rgb(35,63,75); */
-  width: 400px;
-  height: 200px;
-}
-
-.home-card:hover {
-  background-color: rgb(232, 233, 235);
-}
-/* .card:hover {
-  /* border: 2px solid black; 
-} */
-
-.img1 img{
-  height: 175px;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
-  width: 100%;
-}
-
-.img2 img{
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.lessons-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.lessons-card-background {
+  height: 180px;
+  overflow: hidden;
+}
+
+.lessons-card-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lessons-card-profile {
+  position: relative;
+  margin-top: -70px;
+  padding: 0 20px;
+}
+
+.lessons-card-profile img {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  border: 4px solid rgb(255, 255, 255);
-  margin-top: -80px;
+  border: 5px solid white;
+  margin: 0 auto;
+  display: block;
+  object-fit: cover;
 }
 
-.card:hover .img2 img{
-  border-color: #728BA6;
-  transition: .5s;
-}
-
-
-.main-text{
-  padding: 30px 0;
+.lessons-card-content {
+  padding: 20px;
   text-align: center;
+  flex-grow: 1;
 }
 
-.main-text h2{
-  text-transform: uppercase;
+.lessons-card-content h2 {
+  color: #233F4B;
+  font-size: 24px;
   font-weight: 600;
-  font-size: 20px;
-  margin: 0 0 20px;
+  margin-bottom: 15px;
 }
 
-.main-text p{
+.lessons-card-content p {
+  color: #666;
   font-size: 16px;
-  padding: 0 35px;
+  line-height: 1.6;
+  margin-bottom: 25px;
 }
 
-.book-button{
-  padding: 5px;
-  /* margin-bottom: 20px; */
-  height: 50px;
-  backdrop-filter: blur(10px);
-  /* background-color: rgba(33, 42, 48,.8); */
-  border: 2px solid white;
-}
-
-.btn-light {
-  background-color: #728BA6;
+.lessons-book-button {
+  display: block;
+  background: #728BA6;
   color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
   font-weight: 600;
+  font-size: 16px;
+  margin: 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
-.btn-dark {
-  background-color: rgb(35,63,75);
+.lessons-book-button:hover {
+  background: #546c83;
   color: white;
-  /* font-weight: 600; */
-}
-
-.btn-light:hover {
-  border: 2px solid black;
+  text-decoration: none;
 }
 
 /*-------- CALENDAR BOOKING CSS -------------------*/

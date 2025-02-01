@@ -18,6 +18,7 @@ function Lessons_BookingPage() {
     selectedTime: null,
     name: '',
     isMember: false,
+    phone: '', 
     notes: ''
   });
 
@@ -50,17 +51,42 @@ function Lessons_BookingPage() {
     });
   };
 
+  // const handleBookingSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     await coachApi.createBooking(coachId, {
+  //       date: date.toISOString().split('T')[0],
+  //       startTime: bookingInfo.selectedTime,
+  //       endTime: bookingInfo.selectedTime + 1,
+  //       name: bookingInfo.name,
+  //       isMember: bookingInfo.isMember,
+  //       notes: bookingInfo.notes
+  //     });
+  //     alert('Booking successful!');
+  //     window.location.href = '/lessons';
+  //   } catch (error) {
+  //     console.error('Error creating booking:', error);
+  //     alert('Failed to create booking. Please try again.');
+  //   }
+  // };
+
+
   const handleBookingSubmit = async (e) => {
     e.preventDefault();
     try {
-      await coachApi.createBooking(coachId, {
-        date: date.toISOString().split('T')[0],
-        startTime: bookingInfo.selectedTime,
-        endTime: bookingInfo.selectedTime + 1,
+      const bookingData = {
+        booking_date: date.toISOString().split('T')[0],
+        start_time: bookingInfo.selectedTime,
+        end_time: `${parseInt(bookingInfo.selectedTime) + 1}:00`, // Proper time format
         name: bookingInfo.name,
-        isMember: bookingInfo.isMember,
-        notes: bookingInfo.notes
-      });
+        client_name: bookingInfo.name,
+        client_phone: bookingInfo.phone || '', // Add phone field to your form
+        is_member: bookingInfo.isMember,
+        notes: bookingInfo.notes,
+        status: 'scheduled'
+      };
+  
+      await coachApi.createBooking(coachId, bookingData);
       alert('Booking successful!');
       window.location.href = '/lessons';
     } catch (error) {
@@ -123,6 +149,16 @@ function Lessons_BookingPage() {
                       />
                       I am a member
                     </label>
+                  </div>
+
+                  <div className="user-box">
+                    <input
+                      type="tel"
+                      required
+                      value={bookingInfo.phone}
+                      onChange={(e) => setBookingInfo({...bookingInfo, phone: e.target.value})}
+                    />
+                    <label>Phone</label>
                   </div>
 
                   <div className="user-box">

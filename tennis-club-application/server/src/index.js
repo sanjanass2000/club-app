@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const app = express();
 const coachesRouter = require('./routes/coaches');
+const clinicsRouter = require('./routes/clinics')
 
 // Middleware
 app.use(cors());
@@ -12,6 +13,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/coaches', coachesRouter);
+app.use('/api/clinics', clinicsRouter);
 
 // Test route
 app.get('/', (req, res) => {

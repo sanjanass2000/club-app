@@ -451,15 +451,175 @@
 // export default KidsPage;
 
 
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { motion } from 'framer-motion';
+// import React from "react";
+// import { useNavigate } from "react-router-dom";
+// import { motion } from 'framer-motion';
+// import Header from "../components/Header";
+// import Footer from "../components/Footer";
+// import "../styles/Kids.css";
+
+// const KidsPage = () => {
+//   const navigate = useNavigate();
+//   const programs = [
+//     {
+//       title: "Rippers: Ages 4-6",
+//       time: "4:00 - 5:00 PM",
+//       days: "Monday & Wednesday",
+//       memberPrice: "$225/Month",
+//       guestPrice: "$300/Month",
+//       link: "/register/rippers"
+//     },
+//     {
+//       title: "Ralliers: Ages 6-8",
+//       time: "4:00 - 5:00 PM",
+//       days: "Monday & Wednesday",
+//       memberPrice: "$225/Month",
+//       guestPrice: "$300/Month",
+//       link: "/register/ralliers"
+//     },
+//     {
+//       title: "Challengers: Ages 8-10",
+//       time: "4:00 - 5:30 PM",
+//       days: "Tuesday & Thursday",
+//       memberPrice: "$325/Month",
+//       guestPrice: "$400/Month",
+//       link: "/register/challengers"
+//     },
+//     {
+//       title: "Champions: Ages 10-12",
+//       time: "5:00 - 6:30 PM",
+//       days: "Monday & Wednesday",
+//       memberPrice: "$350/Month",
+//       guestPrice: "$425/Month",
+//       link: "/register/champions"
+//     },
+//     {
+//       title: "Teen Clinic: Ages 13+",
+//       time: "5:00 - 6:30 PM",
+//       days: "Monday & Wednesday",
+//       memberPrice: "$350/Month",
+//       guestPrice: "$425/Month",
+//       link: "/register/teen-clinic"
+//     },
+//     {
+//       title: "Tournament Team: Ages 10+",
+//       time: "4:00 - 5:00 PM",
+//       days: "Monday & Wednesday",
+//       memberPrice: "$225/Month",
+//       guestPrice: "$300/Month",
+//       link: "/kids_registration"
+//     }
+//   ];
+
+//   return (
+//     <div>
+//       <Header />
+//       <motion.div 
+//         initial={{ opacity: 0 }}
+//         animate={{ opacity: 1 }}
+//         transition={{ duration: 0.5 }}
+//       >
+//         <main className="main__kids">
+//           <section className="first__section">
+//             <h1 className="heading">Barton Creek Junior Tennis Academy</h1>
+//             <h2 className="subheading">Kids Programs</h2>
+            
+//             <div className="programs-grid">
+//               {programs.map((program, index) => (
+//                 <motion.div
+//                   key={program.title}
+//                   className="program-card"
+//                   initial={{ opacity: 0, y: 20 }}
+//                   animate={{ opacity: 1, y: 0 }}
+//                   transition={{ delay: index * 0.1 }}
+//                 >
+//                   <div className="program-content">
+//                     <h3>{program.title}</h3>
+//                     <p className="time">{program.time}</p>
+//                     <p className="days">{program.days}</p>
+//                     <div className="pricing">
+//                       <p className="member-price">Member: {program.memberPrice}</p>
+//                       <p>Guest of Member: {program.guestPrice}</p>
+//                     </div>
+//                   </div>
+//                   <button 
+//                     className="register-button"
+//                     onClick={() => navigate(program.link)}
+//                   >
+//                     REGISTER NOW
+//                   </button>
+//                 </motion.div>
+//               ))}
+//             </div>
+//           </section>
+//         </main>
+//       </motion.div>
+//       <Footer />
+//     </div>
+//   );
+// };
+
+// export default KidsPage;
+
+
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../styles/Kids.css";
 
+// RegistrationForm Component
+const RegistrationForm = ({ program, onClose }) => {
+  // Form state variables can be added here as needed
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Process registration here...
+    alert(`Registered for ${program.title}!`);
+    onClose();
+  };
+
+  return (
+    <motion.div 
+      className="modal-overlay"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <motion.div 
+        className="modal-content"
+        initial={{ scale: 0.8 }}
+        animate={{ scale: 1 }}
+        exit={{ scale: 0.8 }}
+      >
+        <button className="close-button" onClick={onClose}>
+          &times;
+        </button>
+        <h2>Register for {program.title}</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="parentName">Parent Name:</label>
+            <input type="text" id="parentName" name="parentName" required />
+          </div>
+          <div className="form-group">
+            <label htmlFor="childName">Child Name:</label>
+            <input type="text" id="childName" name="childName" required />
+          </div>
+          <div className="form-group">
+            <label htmlFor="contact">Contact Info:</label>
+            <input type="text" id="contact" name="contact" required />
+          </div>
+          <button type="submit" className="submit-button">
+            Submit Registration
+          </button>
+        </form>
+      </motion.div>
+    </motion.div>
+  );
+};
+
 const KidsPage = () => {
-  const navigate = useNavigate();
+  const [selectedProgram, setSelectedProgram] = useState(null);
+
   const programs = [
     {
       title: "Rippers: Ages 4-6",
@@ -467,7 +627,7 @@ const KidsPage = () => {
       days: "Monday & Wednesday",
       memberPrice: "$225/Month",
       guestPrice: "$300/Month",
-      link: "/register/rippers"
+      // Removed the link property since we’re not navigating
     },
     {
       title: "Ralliers: Ages 6-8",
@@ -475,7 +635,6 @@ const KidsPage = () => {
       days: "Monday & Wednesday",
       memberPrice: "$225/Month",
       guestPrice: "$300/Month",
-      link: "/register/ralliers"
     },
     {
       title: "Challengers: Ages 8-10",
@@ -483,7 +642,6 @@ const KidsPage = () => {
       days: "Tuesday & Thursday",
       memberPrice: "$325/Month",
       guestPrice: "$400/Month",
-      link: "/register/challengers"
     },
     {
       title: "Champions: Ages 10-12",
@@ -491,7 +649,6 @@ const KidsPage = () => {
       days: "Monday & Wednesday",
       memberPrice: "$350/Month",
       guestPrice: "$425/Month",
-      link: "/register/champions"
     },
     {
       title: "Teen Clinic: Ages 13+",
@@ -499,7 +656,6 @@ const KidsPage = () => {
       days: "Monday & Wednesday",
       memberPrice: "$350/Month",
       guestPrice: "$425/Month",
-      link: "/register/teen-clinic"
     },
     {
       title: "Tournament Team: Ages 10+",
@@ -507,7 +663,6 @@ const KidsPage = () => {
       days: "Monday & Wednesday",
       memberPrice: "$225/Month",
       guestPrice: "$300/Month",
-      link: "/kids_registration"
     }
   ];
 
@@ -523,7 +678,6 @@ const KidsPage = () => {
           <section className="first__section">
             <h1 className="heading">Barton Creek Junior Tennis Academy</h1>
             <h2 className="subheading">Kids Programs</h2>
-            
             <div className="programs-grid">
               {programs.map((program, index) => (
                 <motion.div
@@ -544,7 +698,7 @@ const KidsPage = () => {
                   </div>
                   <button 
                     className="register-button"
-                    onClick={() => navigate(program.link)}
+                    onClick={() => setSelectedProgram(program)}
                   >
                     REGISTER NOW
                   </button>
@@ -554,6 +708,16 @@ const KidsPage = () => {
           </section>
         </main>
       </motion.div>
+
+      {/* AnimatePresence will handle the modal animations on mount/unmount */}
+      <AnimatePresence>
+        {selectedProgram && (
+          <RegistrationForm 
+            program={selectedProgram} 
+            onClose={() => setSelectedProgram(null)} 
+          />
+        )}
+      </AnimatePresence>
       <Footer />
     </div>
   );

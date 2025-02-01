@@ -126,3 +126,23 @@
     line-height: 1.8;
     color: #666;
   }
+
+  /* .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: all 0.3s ease-in-out;
+  } */
+  
+  /* .header.scrolled {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  } */
+  
+  .service-card {
+    will-change: transform;
+  }
+  
+  .experience-section {
+    will-change: opacity, transform;
+  }
